@@ -8,6 +8,7 @@ This repository contains the implementation of a smart contract that implements 
 - [Running the Merkle.js Script](#running-the-merklejs-script)
 - [Generating Proofs for Claiming Airdrop](#generating-proofs-for-claiming-airdrop)
 - [Assumptions and Limitations](#assumptions-and-limitations)
+- [Unit Testing](#unit-testing)
 
 ## Setup and Prerequisites
 
@@ -76,6 +77,12 @@ To claim the airdrop, users need to provide a valid Merkle proof. Here's how to 
 - The contract assumes that sufficient ERC20 tokens are transferred to it before the airdrop begins.
 - The script assumes a reasonable number of addresses to avoid exceeding block gas limits when verifying Merkle proofs. For very large airdrops, I will break the process into multiple trees or I will use a more gas-efficient method.
 - The CSV file should be well-formatted, with no extraneous whitespace or special characters in addresses and amounts.
+
+## Unit Testing
+![image](https://github.com/user-attachments/assets/9e171a2f-968b-49d1-8e6d-47ddfb842795)
+
+All Test Cases passed successfully
+
 
 ## License
 
