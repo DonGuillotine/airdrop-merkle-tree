@@ -21,11 +21,9 @@ contract MerkleAirdrop is Ownable {
     function claim(uint256 amount, bytes32[] calldata merkleProof) external {
         require(!hasClaimed[msg.sender], "Address has already claimed");
         
-        // Verify the merkle proof
         bytes32 leaf = keccak256(abi.encodePacked(msg.sender, amount));
         require(MerkleProof.verify(merkleProof, merkleRoot, leaf), "Invalid merkle proof");
 
-        // Mark as claimed and transfer tokens
         hasClaimed[msg.sender] = true;
         require(token.transfer(msg.sender, amount), "Token transfer failed");
 
